@@ -18,14 +18,15 @@ const Map = compose(withProps({
   googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBD2x3uoBXe8vWtIaBkvRvlrD9msa-X" +
       "hnM&v=3.exp&libraries=geometry,drawing,places",
   loadingElement: <div style={{
-    height: `300%`
+    height: `200%`
   }}/>,
   containerElement: <div style={{
-    height: `400px`
+    height: `600px`
   }}/>,
   mapElement: <div style={{
       height: `90%`,
-      width: `100%`
+      width: `80%`,
+      margin: `0 auto`
     }}/>
 }), lifecycle({
   componentWillMount() {
@@ -33,7 +34,7 @@ const Map = compose(withProps({
 
     this.setState({
       bounds: null,
-      places:[],
+      places: [],
       center: {
         lat: 19.39776549999999,
         lng: -99.1713954,
@@ -86,8 +87,7 @@ const Map = compose(withProps({
       }
     })
   }
-}), withScriptjs, withGoogleMap)(props => 
-<Grid>
+}), withScriptjs, withGoogleMap)(props => <Grid>
   <Row className="show-grid">
     <Col md={6} mdPush={6}>
       <GoogleMap
@@ -106,8 +106,8 @@ const Map = compose(withProps({
             style={{
             boxSizing: `border-box`,
             border: `3px solid transparent`,
-            width: `200px`,
-            height: `32px`,
+            width: `400px`,
+            height: `40px`,
             marginTop: `8px`,
             padding: `0 62px`,
             borderRadius: `31px`,
@@ -115,7 +115,7 @@ const Map = compose(withProps({
             fontSize: `16px`,
             outline: `none`,
             textOverflow: `ellipses`,
-            color: `#f87800`,
+            color: `#f87800`
           }}/>
         </SearchBox>
         {props
@@ -124,15 +124,14 @@ const Map = compose(withProps({
       </GoogleMap>
     </Col>
     <Col md={6} mdPull={6}>
-      {props.places.map(({place_id, formatted_address, rating, vicinity, name})=>
-          <div>
-          {name}
-          {formatted_address}
-          {rating}
-          {vicinity}
-          </div>
-          
-    )}
+      {props
+        .places
+        .map(({place_id, formatted_address, rating, name}) => 
+        <div className="entries" key={place_id}>
+          <h1 className="entrie-name">{name}</h1>
+          <p className="entrie-address">{formatted_address}</p>
+          <p className="entrie-rating">Rating:{rating}</p> 
+        </div>)}
     </Col>
   </Row>
 </Grid>);
