@@ -18,4 +18,4 @@ class TableListEntry extends Component {
         </div>
         )};
 }
-export default TableListEntry;
+// export default TableListEntry;
