@@ -106,8 +106,8 @@ const Map = compose(withProps({
             style={{
             boxSizing: `border-box`,
             border: `3px solid transparent`,
-            width: `400px`,
-            height: `40px`,
+            width: `50%`,
+            height: `10%`,
             marginTop: `8px`,
             padding: `0 62px`,
             borderRadius: `31px`,
