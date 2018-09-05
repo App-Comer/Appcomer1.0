@@ -17,9 +17,9 @@
 
 ## Render different locations
 ## Stylize UI
-## Share through social media 
+## Share through social media
 
-##T his is our thesis project as Front-End Specialist, thank you Hola</code> for making this boot-camp possible.
+##  This is our thesis project as Front-End Specialist, thank you Hola</code> for making this boot-camp possible.
 
 ## FrontEnd Team:
 
